@@ -9,12 +9,14 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.CrossOrigin;
 
 import br.com.depaula.book_api.model.Book;
 import br.com.depaula.book_api.service.BookService;
 
 @RestController
 @RequestMapping("books")
+@CrossOrigin(origins = "http://localhost:5173")
 public class BookController {
 
     private final BookService service;
