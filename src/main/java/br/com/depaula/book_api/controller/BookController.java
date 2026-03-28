@@ -25,8 +25,7 @@ public class BookController {
 
     @PostMapping
     public ResponseEntity<Book> addBook(@RequestBody Book book) {
-        service.addBook(book);
-        return ResponseEntity.ok(book);
+        return ResponseEntity.ok(service.addBook(book));
     }
 
     @GetMapping
@@ -41,8 +40,7 @@ public class BookController {
 
     @PutMapping("/{id}")
     public ResponseEntity<Book> updateBookById(@PathVariable Long id, @RequestBody Book book) {
-        service.updateBookById(id, book);
-        return ResponseEntity.ok(book);
+        return ResponseEntity.ok(service.updateBookById(id, book));
     }
 
     @DeleteMapping("/{id}")

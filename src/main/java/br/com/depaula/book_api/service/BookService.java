@@ -16,8 +16,8 @@ public class BookService {
         this.repository = repository;
     }
 
-    public void addBook(Book book) {
-        repository.save(book);
+    public Book addBook(Book book) {
+        return repository.save(book);
     }
 
     public Iterable<Book> findAllBooks() {
@@ -29,13 +29,14 @@ public class BookService {
         return book.get();
     }
 
-    public void updateBookById(Long id, Book book) {
+    public Book updateBookById(Long id, Book book) {
         Optional<Book> storedBook = repository.findById(id);
         if (storedBook.isPresent()) {
             storedBook.get().setTitle(book.getTitle());
             storedBook.get().setAuthor(book.getAuthor());
-            repository.save(storedBook.get());
+            return repository.save(storedBook.get());
         }
+        return null;
     }
 
     public void deleteBookById(Long id) {
