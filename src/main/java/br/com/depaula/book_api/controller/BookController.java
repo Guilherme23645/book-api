@@ -16,7 +16,10 @@ import br.com.depaula.book_api.service.BookService;
 
 @RestController
 @RequestMapping("books")
-@CrossOrigin(origins = "http://localhost:5173")
+@CrossOrigin(origins = {
+    "http://localhost:5173",
+    "https://book-ui-olive.vercel.app/"
+})
 public class BookController {
 
     private final BookService service;
