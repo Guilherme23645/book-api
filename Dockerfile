@@ -5,4 +5,4 @@ COPY . .
 
 RUN chmod +x mvnw && ./mvnw clean package
 
-CMD ["sh", "-c", "java -jar target/*.jar"]
+CMD ["java", "-jar", "target/your-app-name-0.0.1-SNAPSHOT.jar"]
