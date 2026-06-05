@@ -43,6 +43,11 @@ public class BookController {
         return ResponseEntity.ok(service.findBookById(id));
     }
 
+    @GetMapping("/health")
+    public ResponseEntity<String> health() {
+        return ResponseEntity.ok("OK");
+    }
+
     @PutMapping("/{id}")
     public ResponseEntity<Book> updateBookById(@PathVariable Long id, @RequestBody Book book) {
         return ResponseEntity.ok(service.updateBookById(id, book));
