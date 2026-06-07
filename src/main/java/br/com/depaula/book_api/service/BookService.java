@@ -2,6 +2,7 @@ package br.com.depaula.book_api.service;
 
 import java.util.Optional;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import br.com.depaula.book_api.model.Book;
@@ -21,7 +22,7 @@ public class BookService {
     }
 
     public Iterable<Book> findAllBooks() {
-        return repository.findAll();
+        return repository.findAll(Sort.by("id"));
     }
 
     public Book findBookById(Long id) {
